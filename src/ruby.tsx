@@ -30,7 +30,7 @@ export const plugin: Plugin = function() {
 
       console.log(`ruby plugin: baseText="${baseText}", rubyText="${rubyText}"`);
       n.type = 'html';
-      n.value = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`
+      n.value = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`;
     });
   };
 };
