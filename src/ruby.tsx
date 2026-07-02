@@ -18,6 +18,7 @@ export const plugin: Plugin = function() {
 
       if (n.name !== 'ruby') return;
       
+      console.log(`ruby plugin: node=`, n);
       // 2. 「紫陽花（表記）」の取得
       // children配列の最初のテキストノードの value から前後の空白を削る
       const textNode = n.children?.[0];
