@@ -26,8 +26,7 @@ export const plugin: Plugin = function() {
 
       // 3. 「あじさい（ルビ）」の取得
       // attributes オブジェクトの最初の「キー」を取得
-      const attributesKeys = Object.keys(n.attributes || {});
-      const rubyText = attributesKeys.length > 0 ? attributesKeys[0].trim() : '';
+      const rubyText = n.attributes['rb']?.trim();
 
       console.log(`ruby plugin: baseText="${baseText}", rubyText="${rubyText}"`);
       n.type = 'html';
