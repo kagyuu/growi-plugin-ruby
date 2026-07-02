@@ -28,9 +28,20 @@ export const plugin: Plugin = function() {
       // attributes オブジェクトの最初の「キー」を取得
       const rubyText = n.attributes['rb']?.trim();
 
-      console.log(`ruby plugin: baseText="${baseText}", rubyText="${rubyText}"`);
+      // UUIDを計算する
+      const uuid = "today-" + Math.random().toString(36).slice(2);
+
+      // GrowiNode の value には、複雑な HTML を直接書けないため、id 属性を付与してから
+      // DOM 上で書き換える方法を取る
       n.type = 'html';
-      n.value = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`;
+      n.value = `<div id="${uuid}"></div>`
+
+      const id = setInterval(() => {
+        if (document.querySelector('#' + uuid) != null) {
+          document.querySelector('#' + uuid)!.innerHTML = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`;
+          clearInterval(id);
+        }
+      }, 100);
     });
   };
 };
