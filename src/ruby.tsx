@@ -21,8 +21,11 @@ export const plugin: Plugin = function() {
       console.log(`ruby plugin: node=`, n);
       
       const keys = Object.keys(n.attributes);
-      const baseText = keys[0]?.trim;
-      const rubyText = keys[1]?.trim();
+
+      console.log(keys);
+      
+      const baseText = keys[1]?.trim;
+      const rubyText = keys[2]?.trim();
 
       n.type = 'html';
       n.value = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`;
