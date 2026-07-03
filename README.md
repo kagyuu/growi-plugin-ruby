@@ -1,30 +1,21 @@
-# GROIW Today Plugin
+# GROWI Ruby Plugin
 
-This is a today plugin for GROWI. It shows how many days we spent in this {year|month|week|day}.
+This is a Ruby plugin for GROWI. It adds kana ruby ​​(pronunciation guides) to complex kanji characters.
+In other words, it indicates how to pronounce the kanji.
 
-## Install
+## Installation
 
-Install a plugin in admin panel.
+Install the plugin via the admin panel.
 
 ## Usage
 
 ```
-$today
+今日 $ruby(向日葵,ひまわり) が咲いた.
 ```
 
-Show progress bars that represents how many days we spent in this {year|month|week|day}.
-If you make a mouse cursor over the bars, you can get digital percentages.
-
-## Options
-
-```
-$today(date=2032-12-20)
-```
-
-You can specify the date.
-If the date attribute is none, set the currunet date-time implicity.
+In the browser, it is displayed as "今日 <ruby>向日葵<rt>ひまわり</rt></ruby> が咲いた".
+It shows "向日葵" is read as "himawari", sunflower.
 
 ## License
 
-MIT
-
+MIT License

@@ -18,14 +18,14 @@ export const plugin: Plugin = function() {
 
       if (n.name !== 'ruby') return;
       
-      console.log(`ruby plugin: node=`, n);
+      // console.log(`ruby plugin: node=`, n);
       
       const keys = Object.keys(n.attributes);
 
-      console.log(keys);
-      
-      const baseText = keys[1]?.trim;
-      const rubyText = keys[2]?.trim();
+      // console.log(keys);
+
+      const baseText = keys[0]?.trim();
+      const rubyText = keys[1]?.trim();
 
       n.type = 'html';
       n.value = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`;
